@@ -4,7 +4,7 @@ module.exports = {
     return [
       {
         source: '/api/:path*',
-        destination: 'https://lingualearner-api.onrender.com/api/:path*'
+        destination: 'https://snave-api.onrender.com/api/:path*'
       }
     ]
   }

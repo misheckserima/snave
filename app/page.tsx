@@ -80,7 +80,7 @@ export default function Home() {
       if (response.success) {
         // Show success message
         const userName = response.data?.user.name || 'there';
-        alert(`🎉 Registration successful! Welcome to LinguaLearn, ${userName}! You can now start your language learning journey.`);
+        alert(`🎉 Registration successful! Welcome to Snave, ${userName}! You can now start your language learning journey.`);
         
         // Reset form
         setFormData({
@@ -123,7 +123,7 @@ export default function Home() {
                 <Globe className="w-8 h-8 text-white" />
               </div>
               <div>
-                <h1 className="text-2xl font-bold text-gray-900">LinguaLearn</h1>
+                <h1 className="text-2xl font-bold text-gray-900">Snave</h1>
                 <p className="text-sm text-gray-600">Master Languages, Connect Cultures</p>
               </div>
             </div>

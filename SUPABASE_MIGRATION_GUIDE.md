@@ -6,7 +6,7 @@ This guide will help you migrate your application from using Render's PostgreSQL
 
 1. Go to [Supabase](https://supabase.com/) and sign up or log in
 2. Create a new project:
-   - Enter a project name (e.g., "lingualearn")
+   - Enter a project name (e.g., "snave")
    - Set a secure database password
    - Choose a region closest to your users
    - Wait for your project to be created (may take a few minutes)
@@ -18,7 +18,7 @@ This guide will help you migrate your application from using Render's PostgreSQL
 3. Copy the following credentials:
    - **Project URL**: `https://ayadhsrhvszkbvjouwoa.supabase.co`
    - **anon public** key (under Project API keys): `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImF5YWRoc3JodnN6a2J2am91d29hIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTM0MDk1NDgsImV4cCI6MjA2ODk4NTU0OH0.JU8xl4B4Gi4x_UqJLa17P7pzS2yrkuUDm9dD56G03Yk`
-   - **Connection string**: `postgresql://postgres:[YOUR-PASSWORD]@db.ayadhsrhvszkbvjouwoa.supabase.co:5432/postgres`
+   - **Connection string**: `postgresql://postgres:misheckserima2002@Gm@db.ayadhsrhvszkbvjouwoa.supabase.co:5432/postgres`
 
 ## 3. Update Environment Variables
 
@@ -32,10 +32,10 @@ NEXT_PUBLIC_SUPABASE_URL=https://ayadhsrhvszkbvjouwoa.supabase.co
 NEXT_PUBLIC_SUPABASE_ANON_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImF5YWRoc3JodnN6a2J2am91d29hIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTM0MDk1NDgsImV4cCI6MjA2ODk4NTU0OH0.JU8xl4B4Gi4x_UqJLa17P7pzS2yrkuUDm9dD56G03Yk
 
 # Supabase Database Connection (if needed)
-SUPABASE_CONNECTION_STRING=postgresql://postgres:[YOUR-PASSWORD]@db.ayadhsrhvszkbvjouwoa.supabase.co:5432/postgres
+SUPABASE_CONNECTION_STRING=postgresql://postgres:misheckserima2002@Gm@db.ayadhsrhvszkbvjouwoa.supabase.co:5432/postgres
 ```
 
-Replace `[YOUR-PASSWORD]` with your actual database password.
+
 
 ### For Production (Render)
 
@@ -73,7 +73,7 @@ If you have existing data in your Render PostgreSQL database, you'll need to mig
 
 1. Export data from Render PostgreSQL:
    ```bash
-   pg_dump -h your-render-db-host -U your-render-db-user -d your-render-db-name -F c -f render_db_backup.dump
+   pg_dump -h dpg-xxxx-a.oregon-postgres.render.com -U snave_user -d snave -F c -f render_db_backup.dump
    ```
 
 2. Import data to Supabase:

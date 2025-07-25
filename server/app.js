@@ -42,7 +42,7 @@ app.use((req, res, next) => {
 app.get('/health', (req, res) => {
   res.json({ 
     success: true, 
-    message: 'LinguaLearn API is running on Render',
+    message: 'Snave API is running on Render',
     timestamp: new Date().toISOString(),
     environment: process.env.NODE_ENV || 'development',
     port: PORT
@@ -53,7 +53,7 @@ app.get('/health', (req, res) => {
 app.get('/', (req, res) => {
   res.json({
     success: true,
-    message: 'Welcome to LinguaLearn API',
+    message: 'Welcome to Snave API',
     version: '1.0.0',
     endpoints: {
       health: '/health',
@@ -94,7 +94,7 @@ process.on('SIGTERM', () => {
 
 // Start server
 app.listen(PORT, '0.0.0.0', () => {
-  console.log(`🚀 LinguaLearn API server running on port ${PORT}`);
+  console.log(`🚀 Snave API server running on port ${PORT}`);
   console.log(`📊 Health check: http://0.0.0.0:${PORT}/health`);
   console.log(`🌍 Environment: ${process.env.NODE_ENV || 'development'}`);
   console.log(`🔗 Database: ${process.env.DATABASE_URL ? 'Connected' : 'Not configured'}`);

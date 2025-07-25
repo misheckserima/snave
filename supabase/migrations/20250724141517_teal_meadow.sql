@@ -1,7 +1,7 @@
--- LinguaLearn Database Schema
+-- Snave Database Schema
 
 -- Create database (run this separately)
--- CREATE DATABASE lingualearner;
+-- CREATE DATABASE snave;
 
 -- Users table
 CREATE TABLE IF NOT EXISTS users (

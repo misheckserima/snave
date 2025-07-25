@@ -1,4 +1,4 @@
--- LinguaLearn Database Initialization for Render PostgreSQL
+-- Snave Database Initialization for Render PostgreSQL
 -- This file should be run after creating the database on Render
 
 -- Create database extensions if needed
@@ -38,5 +38,5 @@ CREATE TRIGGER update_users_updated_at
     EXECUTE FUNCTION update_updated_at_column();
 
 -- Grant necessary permissions (adjust username as needed)
--- GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO lingualearner_user;
--- GRANT ALL PRIVILEGES ON ALL SEQUENCES IN SCHEMA public TO lingualearner_user;
+-- GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO snave_user;
+-- GRANT ALL PRIVILEGES ON ALL SEQUENCES IN SCHEMA public TO snave_user;

@@ -1,6 +1,6 @@
 -- Create database (run this in your PostgreSQL client first)
--- CREATE DATABASE lingualearn;
--- \c lingualearn
+-- CREATE DATABASE snave;
+-- \c snave
 
 -- Enable UUID extension
 CREATE EXTENSION IF NOT EXISTS "uuid-ossp";

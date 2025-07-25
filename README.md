@@ -1,4 +1,4 @@
-# LinguaLearn - Language Learning Platform
+# Snave - Language Learning Platform
 
 A comprehensive language learning platform with user registration, authentication, and progress tracking. Designed for deployment on Render with PostgreSQL database and Supabase integration.
 
@@ -49,9 +49,9 @@ For detailed instructions on migrating to Supabase, see the [Supabase Migration 
 1. Go to [Render Dashboard](https://dashboard.render.com)
 2. Click "New" → "PostgreSQL"
 3. Configure:
-   - **Name**: `lingualearner-db`
-   - **Database**: `lingualearner`
-   - **User**: `lingualearner_user`
+   - **Name**: `snave-db`
+   - **Database**: `snave`
+   - **User**: `snave_user`
    - **Plan**: Free
 4. Click "Create Database"
 5. Once created, go to the database dashboard and run the SQL from `server/database-init.sql` in the query console
@@ -60,7 +60,7 @@ For detailed instructions on migrating to Supabase, see the [Supabase Migration 
 1. Click "New" → "Web Service"
 2. Connect your GitHub repository
 3. Configure:
-   - **Name**: `lingualearner-api`
+   - **Name**: `snave-api`
    - **Environment**: Node
    - **Build Command**: `npm install`
    - **Start Command**: `npm run start:server`
@@ -76,14 +76,14 @@ For detailed instructions on migrating to Supabase, see the [Supabase Migration 
 1. Click "New" → "Web Service"
 2. Connect your GitHub repository
 3. Configure:
-   - **Name**: `lingualearner-frontend`
+   - **Name**: `snave-frontend`
    - **Environment**: Node
    - **Build Command**: `npm run build`
    - **Start Command**: `npm start`
    - **Plan**: Free
 4. Add Environment Variables:
    - `NODE_ENV`: `production`
-   - `NEXT_PUBLIC_API_URL`: `https://your-api-service-name.onrender.com`
+   - `NEXT_PUBLIC_API_URL`: `https://snave-api.onrender.com`
 5. Click "Create Web Service"
 
 ### Alternative: Using render.yaml (Recommended)
@@ -104,39 +104,39 @@ For detailed instructions on migrating to Supabase, see the [Supabase Migration 
 
 1. **Clone and install:**
    ```bash
-   git clone <your-repo>
-   cd lingualearner
+   git clone https://github.com/yourusername/snave.git
+   cd snave
    npm install
    ```
 
 2. **Database setup:**
    ```bash
    # Create local database
-   createdb lingualearner
+   createdb snave
    
    # Run initialization script
-   psql -d lingualearner -f server/database-init.sql
+   psql -d snave -f server/database-init.sql
    ```
 
 3. **Environment variables:**
    Create `.env.local`:
    
    For PostgreSQL:
-   ```env
-   DATABASE_URL=postgresql://username:password@localhost:5432/lingualearner
-   JWT_SECRET=your-super-secret-jwt-key-change-this-in-production
-   NODE_ENV=development
-   PORT=10000
-   ```
+    ```env
+    DATABASE_URL=postgresql://postgres:postgres@localhost:5432/snave
+    JWT_SECRET=snave-secure-jwt-secret-for-production
+    NODE_ENV=development
+    PORT=10000
+    ```
    
    For Supabase:
    ```env
-   DATABASE_URL=postgresql://username:password@localhost:5432/lingualearner
-   JWT_SECRET=your-super-secret-jwt-key-change-this-in-production
-   NODE_ENV=development
-   PORT=10000
-   NEXT_PUBLIC_SUPABASE_URL=https://your-project-id.supabase.co
-   NEXT_PUBLIC_SUPABASE_ANON_KEY=your-supabase-anon-key
+   DATABASE_URL=postgresql://postgres:postgres@localhost:5432/snave
+    JWT_SECRET=snave-secure-jwt-secret-for-production
+    NODE_ENV=development
+    PORT=10000
+    NEXT_PUBLIC_SUPABASE_URL=https://ayadhsrhvszkbvjouwoa.supabase.co
+    NEXT_PUBLIC_SUPABASE_ANON_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImF5YWRoc3JodnN6a2J2am91d29hIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTM0MDk1NDgsImV4cCI6MjA2ODk4NTU0OH0.JU8xl4B4Gi4x_UqJLa17P7pzS2yrkuUDm9dD56G03Yk
    ```
 
 4. **Run development servers:**
@@ -196,23 +196,23 @@ For detailed instructions on migrating to Supabase, see the [Supabase Migration 
 ```env
 NODE_ENV=production
 DATABASE_URL=postgresql://user:pass@host:port/db
-JWT_SECRET=your-super-secure-secret-key
+JWT_SECRET=snave-secure-jwt-secret-for-production
 PORT=10000
-NEXT_PUBLIC_API_URL=https://your-api-service.onrender.com
+NEXT_PUBLIC_API_URL=https://snave-api.onrender.com
 ```
 
 ### Environment Variables (Render with Supabase)
 ```env
 NODE_ENV=production
-JWT_SECRET=your-super-secure-secret-key
+JWT_SECRET=snave-secure-jwt-secret-for-production
 PORT=10000
-NEXT_PUBLIC_API_URL=https://your-api-service.onrender.com
+NEXT_PUBLIC_API_URL=https://snave-api.onrender.com
 NEXT_PUBLIC_SUPABASE_URL=https://ayadhsrhvszkbvjouwoa.supabase.co
 NEXT_PUBLIC_SUPABASE_ANON_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImF5YWRoc3JodnN6a2J2am91d29hIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTM0MDk1NDgsImV4cCI6MjA2ODk4NTU0OH0.JU8xl4B4Gi4x_UqJLa17P7pzS2yrkuUDm9dD56G03Yk
-SUPABASE_CONNECTION_STRING=postgresql://postgres:[YOUR-PASSWORD]@db.ayadhsrhvszkbvjouwoa.supabase.co:5432/postgres
+SUPABASE_CONNECTION_STRING=postgresql://postgres:misheckserima2002@Gm@db.ayadhsrhvszkbvjouwoa.supabase.co:5432/postgres
 ```
 
-Replace `[YOUR-PASSWORD]` with your actual database password.
+
 
 ### Performance Optimizations
 - Database connection pooling
