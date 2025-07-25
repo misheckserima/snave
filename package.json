@@ -4,9 +4,9 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "start": "cross-env NODE_ENV=production node server/app.js",
+    "start": "NODE_ENV=production node server/app.js",
     "dev:server": "nodemon server/app.js",
-    "start:server": "cross-env NODE_ENV=production node server/app.js",
+    "start:server": "node server/app.js",
     "build": "next build",
     "lint": "next lint"
   },
