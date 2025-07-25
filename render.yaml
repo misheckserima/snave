@@ -1,7 +1,7 @@
 services:
   # Backend API Service
   - type: web
-    name: snave-api
+    name: lingualearner-api
     env: node
     plan: free
     buildCommand: npm install
@@ -13,13 +13,13 @@ services:
         generateValue: true
       - key: DATABASE_URL
         fromDatabase:
-          name: snave-db
+          name: lingualearner-db
           property: connectionString
     healthCheckPath: /health
 
   # Frontend Web Service  
   - type: web
-    name: snave-frontend
+    name: lingualearner-frontend
     env: node
     plan: free
     buildCommand: npm run build
@@ -30,12 +30,12 @@ services:
       - key: NEXT_PUBLIC_API_URL
         fromService:
           type: web
-          name: snave-api
+          name: lingualearner-api
           property: host
 
 # Database
 databases:
-  - name: snave-db
+  - name: lingualearner-db
     plan: free
-    databaseName: snave
-    user: snave_user
+    databaseName: lingualearner
+    user: lingualearner_user
