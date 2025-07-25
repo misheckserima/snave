@@ -1,6 +1,6 @@
 # LinguaLearn - Language Learning Platform
 
-A comprehensive language learning platform with user registration, authentication, and progress tracking. Designed for deployment on Render with PostgreSQL database.
+A comprehensive language learning platform with user registration, authentication, and progress tracking. Designed for deployment on Render with PostgreSQL database and Supabase integration.
 
 ## 🚀 Features
 
@@ -20,16 +20,28 @@ A comprehensive language learning platform with user registration, authenticatio
 
 ### Backend
 - Node.js with Express
-- PostgreSQL database
+- PostgreSQL database (Render or Supabase)
+- Supabase for authentication and database
 - JWT authentication
 - bcryptjs for password hashing
 - Input validation and sanitization
 
-## 🌐 Deployment on Render
+## 🌐 Deployment Options
 
-### Prerequisites
+### Option 1: Render with PostgreSQL
+
+#### Prerequisites
 1. GitHub account with your code repository
 2. Render account (free tier available)
+
+### Option 2: Render with Supabase (Recommended)
+
+#### Prerequisites
+1. GitHub account with your code repository
+2. Render account (free tier available)
+3. Supabase account (free tier available)
+
+For detailed instructions on migrating to Supabase, see the [Supabase Migration Guide](./SUPABASE_MIGRATION_GUIDE.md).
 
 ### Step-by-Step Deployment
 
@@ -85,7 +97,7 @@ A comprehensive language learning platform with user registration, authenticatio
 
 ### Prerequisites
 - Node.js (v18 or higher)
-- PostgreSQL (v12 or higher)
+- PostgreSQL (v12 or higher) or Supabase account
 - npm or yarn
 
 ### Setup
@@ -108,11 +120,23 @@ A comprehensive language learning platform with user registration, authenticatio
 
 3. **Environment variables:**
    Create `.env.local`:
+   
+   For PostgreSQL:
    ```env
    DATABASE_URL=postgresql://username:password@localhost:5432/lingualearner
    JWT_SECRET=your-super-secret-jwt-key-change-this-in-production
    NODE_ENV=development
    PORT=10000
+   ```
+   
+   For Supabase:
+   ```env
+   DATABASE_URL=postgresql://username:password@localhost:5432/lingualearner
+   JWT_SECRET=your-super-secret-jwt-key-change-this-in-production
+   NODE_ENV=development
+   PORT=10000
+   NEXT_PUBLIC_SUPABASE_URL=https://your-project-id.supabase.co
+   NEXT_PUBLIC_SUPABASE_ANON_KEY=your-supabase-anon-key
    ```
 
 4. **Run development servers:**
@@ -168,7 +192,7 @@ A comprehensive language learning platform with user registration, authenticatio
 
 ## 🚀 Production Considerations
 
-### Environment Variables (Render)
+### Environment Variables (Render with PostgreSQL)
 ```env
 NODE_ENV=production
 DATABASE_URL=postgresql://user:pass@host:port/db
@@ -176,6 +200,19 @@ JWT_SECRET=your-super-secure-secret-key
 PORT=10000
 NEXT_PUBLIC_API_URL=https://your-api-service.onrender.com
 ```
+
+### Environment Variables (Render with Supabase)
+```env
+NODE_ENV=production
+JWT_SECRET=your-super-secure-secret-key
+PORT=10000
+NEXT_PUBLIC_API_URL=https://your-api-service.onrender.com
+NEXT_PUBLIC_SUPABASE_URL=https://ayadhsrhvszkbvjouwoa.supabase.co
+NEXT_PUBLIC_SUPABASE_ANON_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImF5YWRoc3JodnN6a2J2am91d29hIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTM0MDk1NDgsImV4cCI6MjA2ODk4NTU0OH0.JU8xl4B4Gi4x_UqJLa17P7pzS2yrkuUDm9dD56G03Yk
+SUPABASE_CONNECTION_STRING=postgresql://postgres:[YOUR-PASSWORD]@db.ayadhsrhvszkbvjouwoa.supabase.co:5432/postgres
+```
+
+Replace `[YOUR-PASSWORD]` with your actual database password.
 
 ### Performance Optimizations
 - Database connection pooling

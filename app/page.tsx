@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { BookOpen, Globe, Users, Star } from 'lucide-react';
+import { BookOpen, Globe, Users, Star, Database } from 'lucide-react';
 import { apiClient, type RegisterData } from './lib/api';
 import Link from 'next/link';
 
@@ -181,6 +181,19 @@ export default function Home() {
                 <div>
                   <h3 className="font-semibold text-gray-900">15+ Languages</h3>
                   <p className="text-gray-600 text-sm">Choose from a wide variety of languages</p>
+                </div>
+              </div>
+              <div className="flex items-start space-x-3">
+                <div className="bg-blue-100 p-2 rounded-lg">
+                  <Database className="w-6 h-6 text-blue-600" />
+                </div>
+                <div>
+                  <h3 className="font-semibold text-gray-900">Supabase Integration</h3>
+                  <p className="text-gray-600 text-sm">
+                    <Link href="/examples" className="text-blue-600 hover:text-blue-700 underline">
+                      View examples
+                    </Link>
+                  </p>
                 </div>
               </div>
             </div>
