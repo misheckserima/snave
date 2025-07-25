@@ -1,3 +1,7 @@
+module.exports = {
+  basePath: '/app',
+}
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {};
 
