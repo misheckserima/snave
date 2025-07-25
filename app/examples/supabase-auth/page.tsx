@@ -41,7 +41,7 @@ export default function SupabaseAuthExample() {
         <ol className="list-decimal pl-5 space-y-2">
           <li>We use the Supabase JavaScript client for authentication</li>
           <li>The SupabaseAuth component handles both sign-in and sign-up flows</li>
-          <li>User data is stored in Supabase's auth system and users table</li>
+          <li>User data is stored in Supabase&apos;s auth system and users table</li>
           <li>We handle form validation, loading states, and error messages</li>
           <li>On successful authentication, the user would be redirected to the home page</li>
         </ol>

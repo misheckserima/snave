@@ -131,7 +131,7 @@ export default function SupabaseAuth({ mode }: AuthFormProps) {
       <div className="mt-4 text-center text-sm">
         {mode === 'signin' ? (
           <p>
-            Don't have an account?{' '}
+            Don&apos;t have an account?{' '}
             <a href="/signup" className="text-blue-500 hover:text-blue-700">
               Sign up
             </a>

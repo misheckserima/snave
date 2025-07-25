@@ -101,8 +101,8 @@ export default function SupabaseDataExample() {
         </p>
         <ol className="list-decimal pl-5 space-y-2">
           <li>We import the Supabase client from our configuration file</li>
-          <li>We use React's useEffect hook to fetch data when the component mounts</li>
-          <li>We query the 'users' table using Supabase's query builder</li>
+          <li>We use React&apos;s useEffect hook to fetch data when the component mounts</li>
+          <li>We query the &apos;users&apos; table using Supabase&apos;s query builder</li>
           <li>We handle loading states and errors appropriately</li>
           <li>We display the data in a clean, responsive table</li>
         </ol>

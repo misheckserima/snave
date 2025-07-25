@@ -17,6 +17,7 @@
     "@types/react-dom": "18.2.7",
     "autoprefixer": "10.4.15",
     "bcryptjs": "^3.0.2",
+    "bufferutil": "^4.0.9",
     "cors": "^2.8.5",
     "dotenv": "^17.2.0",
     "eslint": "8.49.0",
@@ -24,13 +25,14 @@
     "express": "^4.18.2",
     "jsonwebtoken": "^9.0.2",
     "lucide-react": "^0.525.0",
-    "next": "^13.5.11",
+    "next": "^15.4.4",
     "pg": "^8.16.3",
-    "postcss": "8.4.30",
+    "postcss": "^8.5.6",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "tailwindcss": "3.3.3",
-    "typescript": "5.2.2"
+    "typescript": "5.2.2",
+    "utf-8-validate": "^5.0.10"
   },
   "devDependencies": {
     "@types/bcryptjs": "^3.0.0",

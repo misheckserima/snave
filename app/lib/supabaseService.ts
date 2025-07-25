@@ -5,7 +5,8 @@ export interface SupabaseUser {
   id: string;
   name: string;
   email: string;
-  created_at: string;
+  created_at?: string;
+  is_active?: boolean;
 }
 
 export class SupabaseService {
@@ -25,9 +26,9 @@ export class SupabaseService {
 
     // If auth successful, store additional user data in the users table
     if (authData.user) {
-      const { data: userData, error: profileError } = await supabase
+      const { data: userRecord, error: profileError } = await supabase
         .from('users')
-        .insert([
+        .insert<SupabaseUser>([
           {
             id: authData.user.id,
             name: userData.name,
@@ -44,7 +45,7 @@ export class SupabaseService {
         return { user: null, error: profileError };
       }
 
-      return { user: userData as SupabaseUser, error: null };
+      return { user: userRecord as SupabaseUser, error: null };
     }
 
     return { user: null, error: new Error('User registration failed') };
